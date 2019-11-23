@@ -1,0 +1,41 @@
+   
+  
+## DISKS
+###########
+
+Config Labels
+-------------
+
+xfs_admin -L /mongodb <mongo disk>
+mkswap -L SWAP /dev/nvme1n1
+
+# cat /etc/fstab
+
+LABEL=/mongodb /mongodb    xfs     defaults        0   0
+LABEL=SWAP   none        swap    sw   0 0
+
+
+## MONGODB PARAMETER
+#####################
+
+mv /etc/mongod.conf /mongodb/mongod.conf
+ln -s /mongodb/mongod.conf /etc/mongod.conf
+chown mongod.mongod /mongodb/mongod.conf
+
+
+
+## USERID
+#############
+
+
+chown mongod.mongod -R /mongodb
+chown mongod.mongod /var/run/mongodb
+
+
+
+## AWS EBS TAGS
+#################
+
+Function data
+Function swap
+
