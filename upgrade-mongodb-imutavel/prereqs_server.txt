@@ -1,0 +1,6 @@
+packer
+terraform
+  terraform init to load providers [aws,null]
+aws cli 
+  --precisa configurar profiles
+python [boto]

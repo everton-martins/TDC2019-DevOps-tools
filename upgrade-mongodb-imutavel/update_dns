@@ -1,0 +1,7 @@
+export OLD_IP=$1
+export NEW_IP=$2
+export ENVTYPE=$3
+export ZONEID=$4
+
+python update_dns.py $OLD_IP $NEW_IP prd $ZONEID
+
